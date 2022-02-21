@@ -2,7 +2,7 @@
 const App = () => {
   return (
     <div>
-      <h1>Expense Tracker</h1>
+      <h1>Expense Tracker V1</h1>
     </div>
   );
 }
