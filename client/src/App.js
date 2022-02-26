@@ -1,9 +1,15 @@
+import {Routes,Route, BrowserRouter} from "react-router-dom"
+import LandingPage from "./components/LandingPage";
+import Transactions from "./components/Transactions";
 
 const App = () => {
   return (
-    <div>
-      <h1>Expense Tracker V1</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route exact path="/sample" element={<LandingPage/>} />
+      <Route exact path="/" element={<Transactions/>} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
