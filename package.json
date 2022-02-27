@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Expense Tracker for tracking all your transactions at one place and getting insights about them",
   "main": "index.js",
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=10.0.0"
+  },
   "scripts": {
     "client:install": "npm i --prefix client",
     "server:install:": "cd server && npm i",
