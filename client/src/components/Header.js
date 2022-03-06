@@ -1,5 +1,5 @@
 import "./styles.css";
-import Logo from "../assets/KnowW Logo.png";
+import Logo from "../assets/knowW_logo.png";
 import ProgressBar from "./ProgressBar";
 
 const Header = () => {
