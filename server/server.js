@@ -1,3 +1,5 @@
+const Sentry = require("@sentry/node");
+const Tracing = require("@sentry/tracing");
 const app = require('./app');
 
 const PORT = process.env.PORT || 5000;
