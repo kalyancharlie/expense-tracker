@@ -1,9 +1,12 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const SettingsPage = () => {
-  return (
-    <div>SettingsPage</div>
-  )
-}
+  const setSelectedPage = useOutletContext();
+  useEffect(() => {
+    setSelectedPage("SETTINGS");
+  });
+  return <div>SettingsPage</div>;
+};
 
-export default SettingsPage
+export default SettingsPage;

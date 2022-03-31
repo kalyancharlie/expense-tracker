@@ -1,9 +1,12 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const TransactionsPage = () => {
-  return (
-    <div>TransactionsPage</div>
-  )
-}
+  const setSelectedPage = useOutletContext();
+  useEffect(() => {
+    setSelectedPage("TRANSACTIONS");
+  });
+  return <div>TransactionsPage</div>;
+};
 
-export default TransactionsPage
+export default TransactionsPage;

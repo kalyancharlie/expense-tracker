@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 
-const ReportPage = () => {
+const BudgetPage = () => {
   const setSelectedPage = useOutletContext();
   useEffect(() => {
-    setSelectedPage("REPORTS");
+    setSelectedPage("BUDGET");
   });
-  return <div>ReportPage</div>;
+  return <div>BudgetPage</div>;
 };
 
-export default ReportPage;
+export default BudgetPage;

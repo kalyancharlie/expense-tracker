@@ -14,36 +14,40 @@ const LoginPage = (props) => {
     console.log(arg1, arg2);
   };
   return (
-    <div className="login__container">
-      <img src={logo} alt="LOGO" className="login-page-logo" />
-      <div className="login-form-container">
-        <h2 className="login-page-heading">LOG IN</h2>
-        <Input
-          label="Email Address:"
-          placeholder="Email"
-          value={userName}
-          setValue={setUserName}
-          classNames={["login-input-field"]}
-        />
-        <Input
-          label="Password:"
-          placeholder="Password"
-          value={password}
-          setValue={setPassword}
-          classNames={["login-input-field"]}
-        />
-        <div className="login-link-container">
-          <Link to="/login">Forgot Password?</Link>
+    <div className="browser-container">
+      <div className="tablet-container">
+        <div className="login__container">
+          <img src={logo} alt="LOGO" className="login-page-logo" />
+          <div className="login-form-container">
+            <h2 className="login-page-heading">LOG IN</h2>
+            <Input
+              label="Email Address:"
+              placeholder="Email"
+              value={userName}
+              setValue={setUserName}
+              classNames={["login-input-field"]}
+            />
+            <Input
+              label="Password:"
+              placeholder="Password"
+              value={password}
+              setValue={setPassword}
+              classNames={["login-input-field"]}
+            />
+            <div className="login-link-container">
+              <Link to="/login">Forgot Password?</Link>
+            </div>
+            <Button
+              classNames={["login-button"]}
+              value={"LOG IN"}
+              clickListener={login}
+              clickListenerArgs={[userName, password]}
+            />
+            <p className="login-new-user-line">
+              I'm a new user. <Link to="/register">Register here</Link>
+            </p>
+          </div>
         </div>
-        <Button
-          classNames={["login-button"]}
-          value={"LOG IN"}
-          clickListener={login}
-          clickListenerArgs={[userName, password]}
-        />
-        <p className="login-new-user-line">
-          I'm a new user. <Link to="/register">Register here</Link>
-        </p>
       </div>
     </div>
   );
