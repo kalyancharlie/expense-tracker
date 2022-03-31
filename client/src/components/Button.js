@@ -6,8 +6,8 @@ const Button = React.memo(
     type = "submit",
     classNames = [],
     value,
-    clickListener = () => {
-      console.log("Button Clicked");
+    clickListener = (...args) => {
+      console.log("Button Clicked with args:", args);
     },
     clickListenerArgs = [],
   }) => {
@@ -18,7 +18,7 @@ const Button = React.memo(
         type={type && type}
         onClick={(e) => {
           e.preventDefault();
-          clickListener(...clickListenerArgs);
+          clickListener.apply(null, clickListenerArgs)
         }}
       >
         {value || "Button"}

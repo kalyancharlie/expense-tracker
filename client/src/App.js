@@ -36,12 +36,13 @@ const App = () => {
           <Route path="/" element={<ExpenseTracker />}>
             {/* Reports/Home/Dashboard Page */}
             <Route
-              index={false}
+              index
               path={ROUTES.REPORTS}
               element={<ReportsPage />}
             />
             {/* Transactions Page */}
             <Route path={ROUTES.TRANSACTIONS} element={<TransactionsPage />} />
+            {/* Budget Page */}
             <Route path={ROUTES.BUDGET} element={<BudgetPage />} />
             {/* Settings Page */}
             <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />

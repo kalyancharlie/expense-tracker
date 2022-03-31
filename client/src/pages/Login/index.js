@@ -10,8 +10,8 @@ import "./index.css";
 const LoginPage = (props) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const login = (arg1, arg2) => {
-    console.log(arg1, arg2);
+  const login = (userName, password) => {
+    console.log(userName, password);
   };
   return (
     <div className="browser-container">

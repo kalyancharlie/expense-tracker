@@ -1,15 +1,12 @@
-import { useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-import "./index.css";
 import { BsCashStack, BsFillBarChartFill, BsWallet2 } from "react-icons/bs";
 import { HiOutlineUser } from "react-icons/hi";
 
-const icon_size = 25;
+import "./index.css";
+import CustomLink from "../components/CustomLink";
 
 const ExpenseTracker = () => {
-  const navigator = useNavigate();
-  const [selectedPage, setSelectedPage] = useState(null);
   return (
     <div className="browser-container">
       <div className="tablet-container app-container">
@@ -18,56 +15,32 @@ const ExpenseTracker = () => {
 
         {/* Reports/Transactions/Settings Component */}
         <div className="outlet__container">
-          <Outlet context={setSelectedPage} />
+          <Outlet />
         </div>
 
         {/* Navbar Component */}
         <div className="navbar__container">
           <div className="footer-box">
-            <div
-              className={`footer-button ${
-                selectedPage === "REPORTS" && "selected"
-              }`}
-              onClick={() => {
-                navigator("/reports");
-              }}
-            >
-              <BsFillBarChartFill size={icon_size} />
+            {/* Reports Link */}
+            <CustomLink to="/reports">
+              <BsFillBarChartFill className="navbar__icon" />
               <p className="footer-button-text">Reports</p>
-            </div>
-            <div
-              className={`footer-button ${
-                selectedPage === "TRANSACTIONS" && "selected"
-              }`}
-              onClick={() => {
-                navigator("/transactions");
-              }}
-            >
-              <BsCashStack size={icon_size} />
+            </CustomLink>
+            {/* Transactions Link */}
+            <CustomLink to="/transactions">
+              <BsCashStack className="navbar__icon" />
               <p className="footer-button-text">Transactions</p>
-            </div>
-            <div
-              className={`footer-button ${
-                selectedPage === "BUDGET" && "selected"
-              }`}
-              onClick={() => {
-                navigator("/budget");
-              }}
-            >
-              <BsWallet2 size={icon_size} />
+            </CustomLink>
+            {/* Budget Link */}
+            <CustomLink to="/budget">
+              <BsWallet2 className="navbar__icon" />
               <p className="footer-button-text">Budget</p>
-            </div>
-            <div
-              className={`footer-button ${
-                selectedPage === "SETTINGS" && "selected"
-              }`}
-              onClick={() => {
-                navigator("/settings");
-              }}
-            >
-              <HiOutlineUser size={icon_size} />
+            </CustomLink>
+            {/* Settings Link */}
+            <CustomLink to="/settings">
+              <HiOutlineUser className="navbar__icon" />
               <p className="footer-button-text">Profile</p>
-            </div>
+            </CustomLink>
           </div>
         </div>
       </div>
