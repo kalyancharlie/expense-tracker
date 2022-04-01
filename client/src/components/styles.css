@@ -98,3 +98,115 @@
   height: 5px;
   border-radius: 5px;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile-image {
+  width: 150px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid #5367ff;
+}
+
+.ring-around-image {
+  display: inline-flex;
+  padding: 0.2rem;
+  border: 3px solid #5367ff;
+  border-radius: 50%;
+  margin: 1rem;
+  position: relative;
+}
+.camera-container {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5367ff;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 14%;
+  right: 1%;
+}
+
+.input-wrapper {
+  width: 80%;
+  text-align: left;
+  padding: 0.5rem;
+  background: #ffffff;
+  border: 0.6px solid #6c757d;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.input-element {
+  border: 0px;
+  width: 80%;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: white;
+}
+
+.gender-container {
+  width: 80%;
+  margin: 0.5rem 0rem 1rem 0rem;
+}
+
+.buttons-container {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.gender-button {
+  background: transparent;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+}
+.gender-selected-button {
+  background: rgba(83, 103, 255, 0.1);
+  color: #5367ff;
+  border: 1px solid #5367ff;
+  font-weight: bold;
+}
+
+.action-button {
+  color: white;
+  background-color: #5367ff;
+  margin: 1.5rem 1rem;
+  padding: 1em 2.5em;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 18px;
+}
+
+.section-heading-container {
+  font-family: Roboto, "sans-serif";
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.back-arrow {
+  width: 2rem;
+  height: 2rem;
+}
+
+.back-arrow-container {
+  padding: 1rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
