@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profileImage from "../assets/default_profile_image.jfif";
-import WrappedInput from "./WrappedInput";
 import "./styles.css";
 import "./index.css";
 import { BsFillCameraFill } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 import { countryList } from "../utils/index";
 
+import WrappedInput from "./WrappedInput";
+import CustomRadio, {RadioButton} from "./CustomRadio";
+
 const ProfileSettings = () => {
+  const [genderOpt, setGenderOpt] = useState(null)
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("form Submitted");
+    // console.log("form Submitted");
   };
+  useEffect(() => {
+    console.log('Gender OPtion Changed ', genderOpt)
+  }, [genderOpt])
   return (
     <>
       <div className="section-heading-container">
@@ -77,11 +83,11 @@ const ProfileSettings = () => {
         <div className="gender-container">
           <p className="defaultStylesLabel">Gender:</p>
           <div className="buttons-container">
-            <button className="gender-button gender-selected-button">
-              Male
-            </button>
-            <button className="gender-button">Female</button>
-            <button className="gender-button">Others</button>
+            <CustomRadio setValue={(val) => setGenderOpt(val)} activeClasses={[]}>
+              <RadioButton value='Male' classNames={['gender-button']} activeClassNames={['gender-selected-button']}>Male</RadioButton>
+              <RadioButton value='Female' classNames={['gender-button']} activeClassNames={['gender-selected-button']}>Female</RadioButton>
+              <RadioButton value='Others' classNames={['gender-button']} activeClassNames={['gender-selected-button']}>Others</RadioButton>
+            </CustomRadio>
           </div>
         </div>
         <button type="submit" className="action-button">
