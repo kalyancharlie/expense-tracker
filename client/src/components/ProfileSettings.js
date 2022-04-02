@@ -91,39 +91,6 @@ const ProfileSettings = () => {
           objectList={countryList}
         />
 
-        {/* Gender Implementation 
-        <div className="wrapped-container">
-          <p className="defaultStylesLabel">Gender:</p>
-          <div className="buttons-container">
-            <CustomRadio
-              setValue={(val) => setGenderOpt(val)}
-              activeClasses={[]}
-            >
-              <RadioButton
-                value="Male"
-                classNames={["gender-button"]}
-                activeClassNames={["gender-selected-button"]}
-              >
-                Male
-              </RadioButton>
-              <RadioButton
-                value="Female"
-                classNames={["gender-button"]}
-                activeClassNames={["gender-selected-button"]}
-              >
-                Female
-              </RadioButton>
-              <RadioButton
-                value="Others"
-                classNames={["gender-button"]}
-                activeClassNames={["gender-selected-button"]}
-              >
-                Others
-              </RadioButton>
-            </CustomRadio>
-          </div>
-        </div> */}
-
         {/* Gender Implementation menthod 2 */}
         <div className="wrapped-container">
           <p className="defaultStylesLabel">Gender:</p>
