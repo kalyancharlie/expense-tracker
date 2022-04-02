@@ -3,13 +3,14 @@ import "./styles.css";
 
 const CustomDropDown = (props) => {
   const { label, value, valueHandler, objectList } = props;
+  //   console.log(objectList.flat());
+  const newObjectList = objectList.flat();
   const dropDownContainerEl = useRef(null);
   const handleValueChange = (event) => {
     dropDownContainerEl.current.classList.toggle("d-none");
     valueHandler(event.target.value);
   };
   const dropDownHandler = () => {
-    console.log("click");
     dropDownContainerEl.current.classList.toggle("d-none");
   };
   return (
@@ -21,7 +22,7 @@ const CustomDropDown = (props) => {
         </p>
       </div>
       <div className="drop-down-container d-none" ref={dropDownContainerEl}>
-        {objectList.map((object) => (
+        {newObjectList.map((object) => (
           <div
             key={`${object}${label}`}
             className={`drop-down-option-container ${

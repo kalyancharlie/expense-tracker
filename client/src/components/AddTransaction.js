@@ -7,9 +7,13 @@ import { loggedInUser, loggedInUserAccounts } from "../utils/sample_data";
 import CustomDropDown from "./CustomDropDown";
 
 const AddTransaction = () => {
+  let sub_categories_list;
   const [transactionType, setTransactionType] = useState(null);
   const [fromAccount, setFromAccount] = useState(null);
   const [toAccount, setToAccount] = useState(null);
+  const [incomeCategory, setIncomeCategory] = useState(null);
+  const [expenseCategory, setExpenseCategory] = useState(null);
+  const [subCategory, setSubCategory] = useState(null);
 
   const handleTransactionTypeChange = (event) => {
     setTransactionType(event.target.value);
@@ -71,25 +75,59 @@ const AddTransaction = () => {
           <select className="defaultStylesInput input-element">{}</select>
         </div> */}
         {transactionType === "Income" && (
-          <CustomDropDown
-            label="From Account"
-            value={fromAccount}
-            valueHandler={setFromAccount}
-            objectList={loggedInUserAccounts.map((obj) =>
-              obj.account_name.toLocaleUpperCase()
-            )}
-          />
+          <>
+            <CustomDropDown
+              label="From Account"
+              value={fromAccount}
+              valueHandler={setFromAccount}
+              objectList={loggedInUserAccounts.map((obj) =>
+                obj.account_name.toLocaleUpperCase()
+              )}
+            />
+            <CustomDropDown
+              label="Category"
+              value={incomeCategory}
+              valueHandler={setIncomeCategory}
+              objectList={loggedInUser.categories.income}
+            />
+          </>
         )}
         {transactionType === "Expense" && (
-          <CustomDropDown
-            label="To Account"
-            value={toAccount}
-            valueHandler={setToAccount}
-            objectList={loggedInUserAccounts.map((obj) =>
-              obj.account_name.toLocaleUpperCase()
+          <>
+            <CustomDropDown
+              label="To Account"
+              value={toAccount}
+              valueHandler={setToAccount}
+              objectList={loggedInUserAccounts.map((obj) =>
+                obj.account_name.toLocaleUpperCase()
+              )}
+            />
+            <CustomDropDown
+              label="Category"
+              value={expenseCategory}
+              valueHandler={setExpenseCategory}
+              objectList={loggedInUser.categories.expense.map(
+                (obj) => obj.category
+              )}
+            />
+            {/* {
+              (sub_categories_list = loggedInUser.categories.expense.filter(
+                (obj) => obj.category === expenseCategory
+              ))
+            } */}
+            {expenseCategory !== null && (
+              <CustomDropDown
+                label="Sub-Category"
+                value={subCategory}
+                valueHandler={setSubCategory}
+                objectList={loggedInUser.categories.expense
+                  .filter((obj) => obj.category === expenseCategory)
+                  .map((obj) => obj.sub_categories)}
+              />
             )}
-          />
+          </>
         )}
+        {/* {console.log(sub_categories_list.sub_categories)} */}
         {transactionType === "To Self" && (
           <>
             <CustomDropDown
