@@ -7,19 +7,30 @@ import { BiArrowBack } from "react-icons/bi";
 import { countryList } from "../utils/index";
 
 import WrappedInput from "./WrappedInput";
-import CustomRadio, {RadioButton} from "./CustomRadio";
+import CustomRadio, { RadioButton } from "./CustomRadio";
+import CustomDropDown from "./CustomDropDown";
 
 const ProfileSettings = () => {
-  const [genderOpt, setGenderOpt] = useState(null)
+  const [genderOpt, setGenderOpt] = useState(null);
+  const [genderValue, setGenderValue] = useState(null);
+  const [countryValue, setCountryValue] = useState(null);
   const submitHandler = (event) => {
     event.preventDefault();
     // console.log("form Submitted");
   };
   useEffect(() => {
-    console.log('Gender OPtion Changed ', genderOpt)
-  }, [genderOpt])
+    console.log("Gender OPtion Changed ", genderOpt);
+  }, [genderOpt]);
+
+  // Handling Gender Change
+  const handleGenderChange = (event) => {
+    setGenderValue(event.target.value);
+  };
+
   return (
     <>
+      {console.log(genderValue)}
+      {console.log(countryValue)}
       <div className="section-heading-container">
         <div className="back-arrow-container">
           <BiArrowBack className="back-arrow" />
@@ -72,22 +83,71 @@ const ProfileSettings = () => {
           label="Date of Birth:"
           value="1967-07-15"
         />
-        <div className="input-wrapper">
-          <p className="defaultStylesLabel">Country:</p>
-          <select className="defaultStylesInput input-element">
-            {countryList.map((country) => (
-              <option key={country}>{country}</option>
-            ))}
-          </select>
-        </div>
-        <div className="gender-container">
+
+        <CustomDropDown
+          label={"Country"}
+          value={countryValue}
+          valueHandler={setCountryValue}
+          objectList={countryList}
+        />
+
+        {/* Gender Implementation 
+        <div className="wrapped-container">
           <p className="defaultStylesLabel">Gender:</p>
           <div className="buttons-container">
-            <CustomRadio setValue={(val) => setGenderOpt(val)} activeClasses={[]}>
-              <RadioButton value='Male' classNames={['gender-button']} activeClassNames={['gender-selected-button']}>Male</RadioButton>
-              <RadioButton value='Female' classNames={['gender-button']} activeClassNames={['gender-selected-button']}>Female</RadioButton>
-              <RadioButton value='Others' classNames={['gender-button']} activeClassNames={['gender-selected-button']}>Others</RadioButton>
+            <CustomRadio
+              setValue={(val) => setGenderOpt(val)}
+              activeClasses={[]}
+            >
+              <RadioButton
+                value="Male"
+                classNames={["gender-button"]}
+                activeClassNames={["gender-selected-button"]}
+              >
+                Male
+              </RadioButton>
+              <RadioButton
+                value="Female"
+                classNames={["gender-button"]}
+                activeClassNames={["gender-selected-button"]}
+              >
+                Female
+              </RadioButton>
+              <RadioButton
+                value="Others"
+                classNames={["gender-button"]}
+                activeClassNames={["gender-selected-button"]}
+              >
+                Others
+              </RadioButton>
             </CustomRadio>
+          </div>
+        </div> */}
+
+        {/* Gender Implementation menthod 2 */}
+        <div className="wrapped-container">
+          <p className="defaultStylesLabel">Gender:</p>
+          <div className="buttons-container">
+            {["Male", "Female", "Others"].map((gender) => (
+              <div key={gender}>
+                <input
+                  type="radio"
+                  name="gender"
+                  className="radio"
+                  id={gender}
+                  value={gender}
+                  onChange={handleGenderChange}
+                />
+                <label
+                  htmlFor={gender}
+                  className={`gender-button ${
+                    genderValue === gender && "gender-selected-button"
+                  }`}
+                >
+                  {gender}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
         <button type="submit" className="action-button">

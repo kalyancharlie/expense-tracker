@@ -353,3 +353,7 @@ export const transactionsData = [
 ];
 
 export const loggedInUser = userData[1];
+
+export const loggedInUserAccounts = accountsData.filter(
+  (data) => data.user_id === loggedInUser.user_id
+);

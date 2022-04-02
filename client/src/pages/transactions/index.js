@@ -1,5 +1,11 @@
+import AddTransaction from "../../components/AddTransaction";
+
 const TransactionsPage = () => {
-  return <div>TransactionsPage</div>;
+  return (
+    <div>
+      <AddTransaction />
+    </div>
+  );
 };
 
 export default TransactionsPage;
