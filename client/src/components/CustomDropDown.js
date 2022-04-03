@@ -3,7 +3,6 @@ import "./styles.css";
 
 const CustomDropDown = (props) => {
   const { label, value, valueHandler, objectList } = props;
-  //   console.log(objectList.flat());
   const newObjectList = objectList.flat();
   const dropDownContainerEl = useRef(null);
   const handleValueChange = (event) => {
@@ -14,9 +13,9 @@ const CustomDropDown = (props) => {
     dropDownContainerEl.current.classList.toggle("d-none");
   };
   return (
-    <div className="wrapped-container">
+    <div className="wrapped-container outline" onClick={dropDownHandler}>
       <p className="defaultStylesLabel">{`${label}:`}</p>
-      <div className="drop-down-heading-container" onClick={dropDownHandler}>
+      <div className="drop-down-heading-container">
         <p className="drop-down-heading">
           {value === null ? `--${label}--` : value}
         </p>

@@ -7,8 +7,7 @@ import { loggedInUser, loggedInUserAccounts } from "../utils/sample_data";
 import CustomDropDown from "./CustomDropDown";
 
 const AddTransaction = () => {
-  let sub_categories_list;
-  const [transactionType, setTransactionType] = useState(null);
+  const [transactionType, setTransactionType] = useState("Income");
   const [fromAccount, setFromAccount] = useState(null);
   const [toAccount, setToAccount] = useState(null);
   const [incomeCategory, setIncomeCategory] = useState(null);

@@ -141,7 +141,7 @@
   border: 0.6px solid #6c757d;
   box-sizing: border-box;
   border-radius: 15px;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0rem;
 }
 
 .drop-down {
@@ -166,7 +166,16 @@
 
 .wrapped-container {
   width: 80%;
-  margin: 0.5rem 0rem 1rem 0rem;
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 0rem;
+}
+
+.outline {
+  border: 0.6px solid #6c757d;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
 }
 
 .buttons-container {
@@ -237,7 +246,7 @@
 }
 
 .drop-down-container {
-  width: 100%;
+  width: auto;
   text-align: left;
   padding: 0.5rem 0rem;
   background: #ffffff;
@@ -247,22 +256,25 @@
   margin-bottom: 0.5rem;
   max-height: 20rem;
   overflow-y: scroll;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
 }
 .drop-down-heading-container {
   width: 100%;
   text-align: left;
   padding: 0.6em;
   background: #ffffff;
-  border: 0.6px solid #6c757d;
   box-sizing: border-box;
   border-radius: 0.3rem;
   font-weight: bold;
   margin: 0.5rem 0rem;
-  cursor: pointer;
+  /* position: absolute; */
 }
 
 .drop-down-option-container {
-  padding: 0.3em;
+  padding: 0.3rem 1rem;
   cursor: pointer;
 }
 
