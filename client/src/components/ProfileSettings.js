@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import profileImage from "../assets/default_profile_image.jfif";
 import "./styles.css";
 import "./index.css";
 import { BsFillCameraFill } from "react-icons/bs";
-import { BiArrowBack } from "react-icons/bi";
 import { countryList } from "../utils/index";
 
 import WrappedInput from "./WrappedInput";
-import CustomRadio, { RadioButton } from "./CustomRadio";
 import CustomDropDown from "./CustomDropDown";
+import SectionHeading from "./SectionHeading";
 
 const ProfileSettings = () => {
-  const [genderOpt, setGenderOpt] = useState(null);
   const [genderValue, setGenderValue] = useState(null);
   const [countryValue, setCountryValue] = useState(null);
   const submitHandler = (event) => {
     event.preventDefault();
     // console.log("form Submitted");
   };
-  useEffect(() => {
-    console.log("Gender OPtion Changed ", genderOpt);
-  }, [genderOpt]);
 
   // Handling Gender Change
   const handleGenderChange = (event) => {
@@ -31,12 +26,7 @@ const ProfileSettings = () => {
     <>
       {console.log(genderValue)}
       {console.log(countryValue)}
-      <div className="section-heading-container">
-        <div className="back-arrow-container">
-          <BiArrowBack className="back-arrow" />
-        </div>
-        <h1 className="section-heading">Profile Settings</h1>
-      </div>
+      <SectionHeading heading="Profile Settings" />
       <form className="form-container" onSubmit={submitHandler}>
         <div className="ring-around-image">
           <img

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import WrappedInput from "./WrappedInput";
 import "./styles.css";
 import "./index.css";
-import { BiArrowBack } from "react-icons/bi";
 import { loggedInUser, loggedInUserAccounts } from "../utils/sample_data";
 import CustomDropDown from "./CustomDropDown";
+import SectionHeading from "./SectionHeading";
 
 const AddTransaction = () => {
   const [transactionType, setTransactionType] = useState("Income");
@@ -24,12 +24,7 @@ const AddTransaction = () => {
   };
   return (
     <>
-      <div className="section-heading-container">
-        <div className="back-arrow-container">
-          <BiArrowBack className="back-arrow" />
-        </div>
-        <h1 className="section-heading">Add Transaction</h1>
-      </div>
+      <SectionHeading heading="Add Transaction" />
       <form className="form-container" onSubmit={submitHandler}>
         {/* Type of Transaction Method 2 */}
         <div className="wrapped-container">
