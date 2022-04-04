@@ -365,17 +365,105 @@
   color: #44475b;
 }
 .add-newItem-heading {
-  padding: 1rem;
+  padding: 0.5em;
   border-left: 2px dashed #44475b;
 }
 .add-item-icon {
-  padding: 1rem 1.5rem;
+  padding: 0.5em 1em;
 }
 .plus-sign {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5em;
+  height: 1.5em;
   color: #44475b;
 }
 .add-newItem-heading-box {
   width: 100%;
+}
+
+.categories-nav-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.category-heading {
+  font-size: 1rem;
+  color: #44475b;
+  font-weight: bold;
+  border-top: 1px solid #9d9d9d;
+  border-bottom: 1px solid #9d9d9d;
+  cursor: pointer;
+  background: rgba(196, 196, 196, 0.623);
+  padding: 0.7rem;
+  width: 50%;
+}
+.border-right {
+  border-right: 1px solid #9d9d9d;
+}
+
+.income-category-container {
+  display: flex;
+  font-size: 1rem;
+  border-bottom: 1px solid #9d9d9d;
+  justify-content: space-between;
+  padding: 0.8em;
+  align-items: center;
+}
+.category-input-ele {
+  display: inline-block;
+  padding: 0.3em;
+  outline: none;
+  font-size: 1rem;
+  border: 0px;
+  cursor: pointer;
+}
+.category-input-ele:focus {
+  outline: none;
+  border: 0px;
+  border-bottom: 1px solid #9d9d9d;
+}
+.categories-container {
+  margin: 0% 5%;
+}
+
+.delete-icon {
+  width: 1.25em;
+  height: 1.25em;
+  cursor: pointer;
+}
+.expense-page-conatainer {
+  display: flex;
+}
+.expense-category-container {
+  font-size: 1rem;
+  border-bottom: 1px solid #9d9d9d;
+  border-right: 1px solid #9d9d9d;
+  padding: 1em;
+  cursor: pointer;
+  background-color: rgba(196, 196, 196, 0.29);
+  margin-right: 1em;
+}
+.background-white {
+  background-color: white;
+  border-bottom: 0px;
+}
+.expense-selected-category {
+  background-color: white;
+  border-right: 0px;
+}
+.sub-categories-container {
+  flex-grow: 1;
+  margin: 5%;
+}
+
+.expense-category-heading {
+  display: flex;
+  font-size: 1.2rem;
+  border: 2px dashed #9d9d9d;
+  border-radius: 1rem;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  align-items: center;
+  font-weight: bold;
 }

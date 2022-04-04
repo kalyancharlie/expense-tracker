@@ -1,5 +1,12 @@
+import React from "react";
+import CategoriesPage from "../../components/CategoriesPage";
+
 const ReportPage = () => {
-  return <div>ReportPage</div>;
+  return (
+    <div>
+      <CategoriesPage />
+    </div>
+  );
 };
 
 export default ReportPage;
