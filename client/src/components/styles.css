@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: Roboto;
 }
 .bg-box {
   display: flex;
@@ -297,4 +298,84 @@
 .drop-down-container::-webkit-scrollbar-thumb {
   background-color: #525861;
   border-radius: 3px;
+}
+
+.account-image {
+  width: 7rem;
+  margin: 0rem 2rem 0rem 0.4rem;
+}
+.account-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 0rem;
+  border: 0.6px solid #6c757d;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.account-details {
+  text-align: left;
+  width: 100%;
+}
+
+.account-heading {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.account-balance-container {
+  border-left: 2px solid #44475b;
+  padding: 0.25em 0em 0.25em 0.5em;
+}
+.account-balance-heading {
+  color: #525861;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+}
+.account-balance {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #44475b;
+}
+
+.account-heading-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-Italic {
+  font-style: italic;
+  font-weight: 300;
+  align-self: flex-start;
+}
+
+.add-newItem-container {
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 90%;
+  margin: 0.5rem 0rem;
+  border: 2px dashed #44475b;
+  display: flex;
+  align-items: center;
+  color: #44475b;
+}
+.add-newItem-heading {
+  padding: 1rem;
+  border-left: 2px dashed #44475b;
+}
+.add-item-icon {
+  padding: 1rem 1.5rem;
+}
+.plus-sign {
+  width: 2rem;
+  height: 2rem;
+  color: #44475b;
+}
+.add-newItem-heading-box {
+  width: 100%;
 }
