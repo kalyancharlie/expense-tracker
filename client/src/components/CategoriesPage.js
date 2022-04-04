@@ -31,8 +31,14 @@ const CategoriesPage = () => {
     setSelectedpage(event.target.textContent);
   };
   const handleExCategoryChange = (event) => {
-    console.log(event.target.textContent);
     setExpenseCategory(event.target.textContent);
+  };
+  const handleExCategoryDelete = () => {
+    setExpenseCategoryList(
+      expenseCategoryList.filter((ele) => ele !== expenseCategory)
+    );
+    setExpenseCategory(expenseCategoryList[1]);
+    // setExpenseCategory(null);
   };
   const handleCategoryChange = (event) => {
     const index = incomeCategoryList.indexOf(incomeCategory);
@@ -62,74 +68,82 @@ const CategoriesPage = () => {
           Expense
         </h2>
       </div>
-      {/* Income Tab */}
-      <div className="categories-container">
-        {selectedPage === "Income" &&
-          incomeCategoryList.map((val) => (
-            <div
-              className="income-category-container"
-              key={`${val} ${selectedPage}`}
-            >
-              {incomeCategory === val ? (
-                <input
-                  className="category-input-ele"
-                  autoFocus
-                  value={val}
-                  onChange={handleCategoryChange}
-                  onClick={() => setIncomeCategory(null)}
-                />
-              ) : (
-                <p
-                  className="category-input-ele"
-                  onClick={() => setIncomeCategory(val)}
-                >
-                  {val}
-                </p>
-              )}
-              <MdDeleteOutline
-                className="delete-icon"
-                onClick={() =>
-                  setIncomeCategoryList(
-                    incomeCategoryList.filter((ele) => ele !== val)
-                  )
-                }
-              />
-            </div>
-          ))}
-      </div>
-      {/* Expense Tab */}
       <div>
-        {selectedPage === "Expense" && (
-          <div className="expense-page-conatainer">
-            <div>
-              {expenseCategoryList.map((val) => (
-                <div
-                  key={`${val} ${selectedPage}`}
-                  className={`expense-category-container ${
-                    expenseCategory === val && "expense-selected-category"
-                  }`}
-                >
-                  <p onClick={handleExCategoryChange}>{val}</p>
-                </div>
-              ))}
-            </div>
-            <div className="sub-categories-container">
-              <div className="expense-category-heading">
-                <p>{expenseCategory}</p>
-                <MdDeleteOutline />
+        {/* Income Tab */}
+        <div className="categories-container">
+          {selectedPage === "Income" &&
+            incomeCategoryList.map((val) => (
+              <div
+                className="income-category-container"
+                key={`${val} ${selectedPage}`}
+              >
+                {incomeCategory === val ? (
+                  <input
+                    className="category-input-ele"
+                    autoFocus
+                    value={val}
+                    onChange={handleCategoryChange}
+                    onClick={() => setIncomeCategory(null)}
+                  />
+                ) : (
+                  <p
+                    className="category-input-ele"
+                    onClick={() => setIncomeCategory(val)}
+                  >
+                    {val}
+                  </p>
+                )}
+                <MdDeleteOutline
+                  className="delete-icon"
+                  onClick={() =>
+                    setIncomeCategoryList(
+                      incomeCategoryList.filter((ele) => ele !== val)
+                    )
+                  }
+                />
               </div>
-              {subCategoryList.map((val) => (
-                <div
-                  className="income-category-container"
-                  key={`${val} ${selectedPage}`}
-                >
-                  <p>{val}</p>
-                  <MdDeleteOutline />
+            ))}
+        </div>
+        {/* Expense Tab */}
+        <div>
+          {selectedPage === "Expense" && (
+            <div className="expense-page-conatainer">
+              <div>
+                {expenseCategoryList.map((val) => (
+                  <div
+                    key={`${val} ${selectedPage}`}
+                    className={`expense-category-container ${
+                      expenseCategory === val && "expense-selected-category"
+                    }`}
+                  >
+                    <p onClick={handleExCategoryChange}>{val}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="sub-categories-container">
+                <div className="expense-category-heading">
+                  <p>{expenseCategory}</p>
+                  <MdDeleteOutline onClick={handleExCategoryDelete} />
                 </div>
-              ))}
+                {subCategoryList.map((val) => (
+                  <div
+                    className="income-category-container"
+                    key={`${val} ${selectedPage}`}
+                  >
+                    <p>{val}</p>
+                    <MdDeleteOutline
+                      onClick={() =>
+                        setSubCategoryList(
+                          subCategoryList.filter((ele) => ele !== val)
+                        )
+                      }
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <button
         className="action-button"
