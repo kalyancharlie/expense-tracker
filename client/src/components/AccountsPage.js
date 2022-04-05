@@ -9,11 +9,13 @@ const AccountsPage = () => {
   return (
     <>
       <SectionHeading heading="Accounts" />
-      <div className="form-container">
+      <div className="accounts-page-container">
         {loggedInUserAccounts.map((obj) => (
           <Account name={obj.account_name} balance={obj.balance} />
         ))}
-        <AddNewItem item={"Add Account"} />
+        <div className="add-account-button-container">
+          <AddNewItem item={"Add Account"} />
+        </div>
       </div>
     </>
   );

@@ -68,11 +68,11 @@ const CategoriesPage = () => {
           Expense
         </h2>
       </div>
-      <div>
+      <div className="categories-page-container">
         {/* Income Tab */}
-        <div className="categories-container">
-          {selectedPage === "Income" &&
-            incomeCategoryList.map((val) => (
+        {selectedPage === "Income" && (
+          <div className="categories-container">
+            {incomeCategoryList.map((val) => (
               <div
                 className="income-category-container"
                 key={`${val} ${selectedPage}`}
@@ -103,12 +103,15 @@ const CategoriesPage = () => {
                 />
               </div>
             ))}
-        </div>
+            <AddNewItem item="Category" />
+          </div>
+        )}
+
         {/* Expense Tab */}
-        <div>
-          {selectedPage === "Expense" && (
+        {selectedPage === "Expense" && (
+          <div className="expense-box">
             <div className="expense-page-conatainer">
-              <div>
+              <div className="expense-column">
                 {expenseCategoryList.map((val) => (
                   <div
                     key={`${val} ${selectedPage}`}
@@ -119,6 +122,7 @@ const CategoriesPage = () => {
                     <p onClick={handleExCategoryChange}>{val}</p>
                   </div>
                 ))}
+                <AddNewItem item="Category" />
               </div>
               <div className="sub-categories-container">
                 <div className="expense-category-heading">
@@ -140,10 +144,11 @@ const CategoriesPage = () => {
                     />
                   </div>
                 ))}
+                <AddNewItem item="Sub-Category" />
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
       <button
         className="action-button"

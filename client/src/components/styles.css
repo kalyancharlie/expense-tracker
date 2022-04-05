@@ -271,7 +271,6 @@
   border-radius: 0.3rem;
   font-weight: bold;
   margin: 0.5rem 0rem;
-  /* position: absolute; */
 }
 
 .drop-down-option-container {
@@ -307,7 +306,6 @@
 .account-container {
   display: flex;
   align-items: center;
-  width: 90%;
   margin: 0.5rem 0rem;
   padding: 0.5rem 0rem;
   border: 0.6px solid #6c757d;
@@ -354,11 +352,19 @@
   align-self: flex-start;
 }
 
+.accounts-page-container {
+  margin: 0% 5%;
+}
+
+.add-account-button-container {
+  margin-top: 1em;
+}
+
 .add-newItem-container {
+  cursor: pointer;
   text-align: center;
   border-radius: 0.5rem;
-  width: 90%;
-  margin: 0.5rem 0rem;
+  margin: 0.5rem;
   border: 2px dashed #44475b;
   display: flex;
   align-items: center;
@@ -366,14 +372,15 @@
 }
 .add-newItem-heading {
   padding: 0.5em;
+  font-size: inherit;
   border-left: 2px dashed #44475b;
 }
 .add-item-icon {
-  padding: 0.5em 1em;
+  padding: 0.5em;
 }
 .plus-sign {
-  width: 1.5em;
-  height: 1.5em;
+  width: inherit;
+  height: inherit;
   color: #44475b;
 }
 .add-newItem-heading-box {
@@ -386,6 +393,25 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.categories-page-container {
+  overflow-y: auto;
+  height: 80vh;
+}
+.expense-box {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.expense-column {
+  background-color: #9d9d9d;
+  height: 100%;
+  align-self: stretch;
+  overflow-y: auto;
+  width: 35%;
+}
+
 .category-heading {
   font-size: 1rem;
   color: #44475b;
@@ -423,7 +449,7 @@
   border-bottom: 1px solid #9d9d9d;
 }
 .categories-container {
-  margin: 0% 5%;
+  margin: 1em;
 }
 
 .delete-icon {
@@ -433,10 +459,13 @@
 }
 .expense-page-conatainer {
   display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 .expense-category-container {
   font-size: 1rem;
-  border-bottom: 1px solid #9d9d9d;
+  border-bottom: 1px solid #616161;
   border-right: 1px solid #9d9d9d;
   padding: 1em;
   cursor: pointer;
@@ -453,6 +482,7 @@
 .sub-categories-container {
   flex-grow: 1;
   margin: 5%;
+  overflow-y: auto;
 }
 
 .expense-category-heading {
