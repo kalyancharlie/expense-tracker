@@ -1,7 +1,12 @@
 import React from "react";
+import ProfileSettings from "../../components/ProfileSettings";
 
 const MaintenancePage = () => {
-  return <div>MaintenancePage</div>;
+  return (
+    <div>
+      <ProfileSettings />
+    </div>
+  );
 };
 
 export default MaintenancePage;
