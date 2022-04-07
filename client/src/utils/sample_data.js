@@ -277,7 +277,7 @@ export const transactionsData = [
     sub_category: "NA",
     from_account: "NA",
     to_account: 103,
-    notes: "received salary",
+    notes: "received_salary",
     last_updated_time: new Date(5, 2, 2022),
   },
   {
@@ -291,7 +291,7 @@ export const transactionsData = [
     sub_category: "vehicle",
     from_account: 101,
     to_account: "NA",
-    notes: "Car EMI",
+    notes: "Car_EMI",
     last_updated_time: new Date(12, 2, 2022),
   },
   {
@@ -305,7 +305,7 @@ export const transactionsData = [
     sub_category: "NA",
     from_account: 101,
     to_account: 103,
-    notes: "Internal Transfer",
+    notes: "Internal_Transfer",
     last_updated_time: new Date(25, 2, 2022),
   },
   {
@@ -319,7 +319,7 @@ export const transactionsData = [
     sub_category: "NA",
     from_account: "NA",
     to_account: 102,
-    notes: "received salary",
+    notes: "received_salary",
     last_updated_time: new Date(5, 2, 2022),
   },
   {
@@ -333,7 +333,7 @@ export const transactionsData = [
     sub_category: "vehicle",
     from_account: 104,
     to_account: "NA",
-    notes: "Car EMI",
+    notes: "Car_EMI",
     last_updated_time: new Date(12, 2, 2022),
   },
   {
@@ -347,7 +347,7 @@ export const transactionsData = [
     sub_category: "NA",
     from_account: 102,
     to_account: 104,
-    notes: "Internal Transfer",
+    notes: "Internal_Transfer",
     last_updated_time: new Date(25, 2, 2022),
   },
 ];
@@ -355,5 +355,9 @@ export const transactionsData = [
 export const loggedInUser = userData[1];
 
 export const loggedInUserAccounts = accountsData.filter(
+  (data) => data.user_id === loggedInUser.user_id
+);
+
+export const loggedInUserTransactions = transactionsData.filter(
   (data) => data.user_id === loggedInUser.user_id
 );

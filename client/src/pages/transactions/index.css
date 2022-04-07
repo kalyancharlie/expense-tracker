@@ -1,0 +1,155 @@
+.transactions-page-header-box {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5% 2.5% 0% 2.5%;
+  border-bottom: 1px solid #9d9d9d;
+}
+.repeated-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.image-bar-container {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+.logo-image-main {
+  display: block;
+  width: 70%;
+}
+.progress-bar-container {
+  width: 80%;
+}
+.color-light {
+  color: #44475b;
+}
+.period-box {
+  text-align: left;
+  width: 40%;
+  padding-left: 2rem;
+}
+.period-heading {
+  font-size: 0.8rem;
+}
+.period-text {
+  margin: 0.1em 0em;
+  font-size: 1.2rem;
+}
+.caret-container {
+  text-align: right;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.caret {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.rotate {
+  transform: rotateZ(180deg);
+}
+.hidden-box {
+  padding: 5% 5% 0% 5%;
+}
+.time-range-box {
+  font-size: 0.9rem;
+  text-align: left;
+  width: 80%;
+}
+.time-range-values {
+  margin-top: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.time-range-value {
+  width: 50%;
+  cursor: pointer;
+  padding-top: 0.4em;
+}
+.radio-in-period {
+  margin: 0em 1em;
+}
+.start-end-box {
+  margin-top: 5%;
+  display: flex;
+  width: 80%;
+  align-items: center;
+  text-align: left;
+}
+.time-box {
+  font-size: 0.9rem;
+  margin-right: 1em;
+}
+.date-input {
+  margin-top: 0.4em;
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+.transactions-page-body {
+  padding: 5%;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 50%;
+}
+.search-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  color: #9d9d9d;
+}
+.search-add-transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.add-transaction {
+  color: white;
+  background: #5367ff;
+  border-radius: 20px;
+  padding: 0.5em;
+  padding-right: 0.8em;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.add-icon {
+  width: 2rem;
+  height: 2rem;
+}
+.filter-box {
+  margin: 5% 0%;
+}
+.table-box {
+  width: 100%;
+  overflow-x: auto;
+}
+.header-cell {
+  background: #edeeef;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.7em;
+  color: #6c757d;
+}
+.body-cell {
+  background: #f6f6f7;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.7em;
+  color: #6c757d;
+}
