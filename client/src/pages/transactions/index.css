@@ -34,7 +34,7 @@
 }
 .period-text {
   margin: 0.1em 0em;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .caret-container {
   text-align: right;
@@ -51,10 +51,13 @@
 .hidden-box {
   padding: 5% 5% 0% 5%;
 }
+.time-text {
+  font-size: 0.8rem;
+}
 .time-range-box {
   font-size: 0.9rem;
   text-align: left;
-  width: 80%;
+  width: 90%;
 }
 .time-range-values {
   margin-top: 0.5em;

@@ -44,7 +44,9 @@ const TransactionsPage = () => {
                     className="radio-in-period"
                     onChange={() => setPeriod(ele)}
                   />
-                  <label htmlFor={ele}>{ele}</label>
+                  <label className="time-text" htmlFor={ele}>
+                    {ele}
+                  </label>
                 </div>
               ))}
             </div>
@@ -85,24 +87,32 @@ const TransactionsPage = () => {
         <div className="filter-box">Filteres to be added </div>
         <div className="table-box">
           <table>
-            <tr>
-              {Object.keys(loggedInUserTransactions[0]).map((item) => (
-                <th key={item} className="header-cell">
-                  {item}
-                </th>
-              ))}
-            </tr>
-            {loggedInUserTransactions.map((item) => (
-              <tr key={item.transaction_id}>
-                {Object.values(item).map((ele) => {
-                  if (ele instanceof Date) {
-                    ele = ele.toLocaleDateString("en-US");
-                  }
-                  return <td className="body-cell">{ele}</td>;
-                })}
-                {console.log(Object.values(item))}
+            <thead>
+              <tr>
+                {Object.keys(loggedInUserTransactions[0]).map((item) => (
+                  <th key={item} className="header-cell">
+                    {item}
+                  </th>
+                ))}
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {loggedInUserTransactions.map((item) => (
+                <tr key={item.transaction_id}>
+                  {Object.values(item).map((ele, index) => {
+                    if (ele instanceof Date) {
+                      ele = ele.toLocaleDateString("en-US");
+                    }
+                    return (
+                      <td key={`${ele}${index}`} className="body-cell">
+                        {ele}
+                      </td>
+                    );
+                  })}
+                  {/* {console.log(Object.values(item))} */}
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       </div>
